@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  api_alura_bank:
+    build:
+      context: './backend/.'
+    ports:
+      - 8080:8080
+    restart: always
+  front_end_alura_bank:
+    build:
+      context: './frontend/.'
+    ports:
+      - 3000:3000
+    restart: always
+    depends_on: 
+      - api_alura_bank
+
